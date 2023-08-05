@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styles from '../../../styles/guitarras.module.css'
+import CantidadSelect from '@/components/CantidadSelect'
 
 const fetchGuitarra = (ruta) => {
     return fetch(`http://127.0.0.1:1337/api/guitarras?filters[url]=${ruta}&populate=imagen`, {
@@ -23,17 +24,12 @@ export default async function GuitarraPage({params}) {
                 <p className={styles.descripcion}>{descripcion}</p>
                 <p className={styles.precio}>${precio}</p>
 
-                <form>
-                    <label htmlFor='cantidad'>Cantidad: </label>
-                    <select id="cantidad">
-                        <option value='0'> -- SELECCIONE -- </option>
-                        <option value='1'> 1 </option>
-                        <option value='2'> 2 </option>
-                        <option value='3'> 3 </option>
-                        <option value='4'> 4 </option>
-                        <option value='5'> 5 </option>
-                    </select>
-                </form>
+                <CantidadSelect 
+                    id={guitarra[0].id}
+                    imagen={imagen.data.attributes.url}
+                    nombre={nombre}
+                    precio={precio}
+                />
             </div>
         </div>
     )

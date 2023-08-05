@@ -1,4 +1,6 @@
+import ListadoCarrito from '@/components/ListadoCarrito'
 import styles from '../../styles/carrito.module.css'
+import ResumenPedido from '@/components/ResumenPedido'
 
 export default function CarritoPage() {
   return (
@@ -8,12 +10,10 @@ export default function CarritoPage() {
         <div className={styles.contenido}>
             <div className={styles.carrito}>
                 <h2>Articulos</h2>
+                <ListadoCarrito />
             </div>
 
-            <aside className={styles.resumen}>
-                <h3>Resumen del pedido</h3>
-                <p>Total a pagar: </p>
-            </aside>
+            <ResumenPedido />
         </div>
     </main>
   )
