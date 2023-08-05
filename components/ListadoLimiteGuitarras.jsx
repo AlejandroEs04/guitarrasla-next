@@ -1,7 +1,7 @@
 import Guitarra from "./Guitarra";
 
 const fetchGuitarras = () => {
-    return fetch('http://127.0.0.1:1337/api/guitarras?populate=imagen', {
+    return fetch('https://guitarraslastrapi.onrender.com/api/guitarras?populate=imagen', {
         next: {
             revalidate: 30
         }

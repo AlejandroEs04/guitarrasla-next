@@ -3,7 +3,7 @@ import styles from '../../../styles/guitarras.module.css'
 import CantidadSelect from '@/components/CantidadSelect'
 
 const fetchGuitarra = (ruta) => {
-    return fetch(`http://127.0.0.1:1337/api/guitarras?filters[url]=${ruta}&populate=imagen`, {
+    return fetch(`https://guitarraslastrapi.onrender.com/api/guitarras?filters[url]=${ruta}&populate=imagen`, {
         next: {
             revalidate: 30
         }

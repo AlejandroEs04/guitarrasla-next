@@ -3,7 +3,7 @@ import { formatearFecha } from "@/utils/helpers";
 import styles from '../../../styles/blog.module.css'
 
 const fetchSinglePost = (url) => {
-    return fetch(`http://127.0.0.1:1337/api/posts?filters[url]=${url}&populate=imagen`, {
+    return fetch(`https://guitarraslastrapi.onrender.com/api/posts?filters[url]=${url}&populate=imagen`, {
         next: {
             revalidate: 30
         }
